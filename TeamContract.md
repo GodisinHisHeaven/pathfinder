@@ -20,3 +20,5 @@ However if a team member is habitually not completing their tasks, they may be a
 ## Signatures
 
 Xudong Xiao (xudongx2)
+
+Mingjun Liu (mingjun6)
