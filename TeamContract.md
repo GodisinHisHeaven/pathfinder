@@ -19,4 +19,4 @@ However if a team member is habitually not completing their tasks, they may be a
 
 ## Signatures
 
-Xudong Xiao (xudongx2), Yiheng Nie (yihengn2)
+Xudong Xiao (xudongx2), Yiheng Nie (yihengn2), Cooper Miller (kcm3)
