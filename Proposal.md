@@ -21,9 +21,8 @@ We would store this dataset by an array. The total storage costs should be **_O(
 
 We will use BFS to traverse the points by giving start and end nodes.
 
-The time complexity should be **_O(K^m^)_** while the **K** is the most significant number of adjacent nodes in the
-graph and **
-m** is the length of our shortest route. In our implementation, we would use a queue so that the space complexity should
+The time complexity should be **_O(K^m)_** while the **K** is the most significant number of adjacent nodes in the
+graph and **m** is the length of our shortest route. In our implementation, we would use a queue so that the space complexity should
 be **_O(N)_**.
 
 ### Dijkstra's Algorithm
@@ -32,7 +31,7 @@ By the given latitude and longitude, we could calculate the distance between eac
 then we would use Dijkstra's Algorithm to get the shortest route from start to end node. Finally, we could calculate the
 gas consumption.
 
-The time complexity should be _**O(E + VlogV)**_ while the E edges and V are vertexes in our graph. The space complexity
+The time complexity should be _**O(E + VlogV)**_ while the E edges and V are vertices in our graph. The space complexity
 should be **_O(E + V)_**.
 
 ## Timeline
