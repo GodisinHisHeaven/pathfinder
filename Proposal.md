@@ -9,7 +9,7 @@ The dataset we are using is retrieved at https://www.cs.utah.edu/~lifeifei/Spati
 
 The dataset contains about 6,000 nodes and about 170,000 edges
 in `Node ID, Normalized X Coordinate, Normalized Y Coordinate` and `Edge ID, Start Node ID, End Node ID, L2 Distance` in
-each line. The dataset is about 500MB.
+each line. The dataset is about 10MB.
 
 We could check the data by check the coordinates are in the boundary of the United States or not.
 
