@@ -22,9 +22,11 @@ using namespace std;
 class BFS
 {
 private:
-    /* data */
+    
+    
+
 public:
-    BFS(/* args */);
+    BFS();
     ~BFS();
 };
 
