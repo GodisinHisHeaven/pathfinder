@@ -8,13 +8,29 @@
 
 ### Tasks:
 
-
 ### Encountered Problems:
 
-### Next Week's Plan
+### Next Week's Plan:
 
 ## Week 2
 
+### Goals:
+
+### Tasks:
+
+### Encountered Problems:
+
+### Next Week's Plan:
+
 ## Week 3
+
+### Goals:
+
+### Tasks:
+
+### Encountered Problems:
+
+### Next Week's Plan:
+
 
 
