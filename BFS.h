@@ -19,14 +19,13 @@
 
 using namespace std;
 
-class BFS
-{
+class BFS {
 private:
-    
-    
+
 
 public:
     BFS();
+
     ~BFS();
 };
 
