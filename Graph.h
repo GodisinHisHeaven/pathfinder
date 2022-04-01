@@ -38,8 +38,8 @@ public:
     /**
      * @brief Add a new edge to the graph
      * 
-     * @param node_name1 
-     * @param node_name2 
+     * @param start
+     * @param dest
      */
     void addEdge(string start, string dest);
 
