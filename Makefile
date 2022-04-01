@@ -1,12 +1,22 @@
-#Executable names:
-EXE = eco
-TEST = test
+CXX=clang++
+INCLUDES=-Iincludes/
+CXXFLAGS=-std=c++11 -g -fstandalone-debug -Wall -Wextra -Werror -pedantic $(INCLUDES)
 
-#Add all object files needed for compiling:
-EXE_OBJ = main.o
-OBJS = Graph.o
+all: bin/exec
+exec: bin/exec
+tests: bin/tests
 
-#Generated files
+bin/exec: ./src/Graph.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-#Use the cs225 makefile template:
-include cs225/make/cs225.mk
+#bin/tests: ./tests/tests.cc obj/catch.o ./src/color.cc ./src/elevation_dataset.cc ./src/grayscale_image.cc ./src/path_image.cc ./src/path.cc
+	#$(CXX) $(CXXFLAGS) $^ -o $@
+
+#obj/catch.o: tests/catch.cc
+#	$(CXX) $(CXXFLAGS) -c $^ -o $@
+
+.DEFAULT_GOAL := clean
+.PHONY: clean
+
+clean:
+	rm -fr bin/* obj/*
