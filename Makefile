@@ -4,7 +4,7 @@ TEST = test
 
 #Add all object files needed for compiling:
 EXE_OBJ = main.o
-OBJS = BFS.o
+OBJS = Graph.o
 
 #Generated files
 
