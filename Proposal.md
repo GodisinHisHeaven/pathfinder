@@ -8,8 +8,7 @@ will analyze the gas consumption point to point by finding the shortest distance
 The dataset we are using is retrieved at https://www.cs.utah.edu/~lifeifei/SpatialDataset.htm.
 
 The dataset contains about 6,000 nodes and about 170,000 edges
-
-# in `Node ID, Normalized X Coordinate, Normalized Y Coordinate` and `Edge ID, Start Node ID, End Node ID, L2 Distance` in
+in `Node ID, Normalized X Coordinate, Normalized Y Coordinate` and `Edge ID, Start Node ID, End Node ID, L2 Distance` in
 
 each line. The dataset is about 10MB.
 
@@ -23,9 +22,9 @@ We would store this dataset by an array. The total storage costs should be **_O(
 
 We will use BFS to traverse the points by giving start and end nodes.
 
-The time complexity should be **_$$O(|V| + |E|) $$_** while the **$V$** is the most significant number of adjacent nodes in the
-graph and **$E$** is the numer of the edge in the shortest path. In our implementation, we would use a queue so that the space complexity should
-be **_$O(N)$_**.
+The time complexity should be **_$$O(|V| + |E|) $$_** while the **$V$** is the most significant number of adjacent nodes
+in the graph and **$E$** is the numer of the edge in the shortest path. In our implementation, we would use a queue so
+that the space complexity should be **_$O(N)$_**.
 
 ### Dijkstra's Algorithm
 
@@ -33,12 +32,14 @@ By the given latitude and longitude, we could calculate the distance between eac
 then we would use Dijkstra's Algorithm to get the shortest route from start to end node. Finally, we could calculate the
 gas consumption.
 
-The time complexity should be _**$O((E + V)logV)$**_ while the E edges and V are vertices in our graph. The space complexity
-should be **_$O(E + V)$_**.
+The time complexity should be _**$O((E + V)logV)$**_ while the E edges and V are vertices in our graph. The space
+complexity should be **_$O(E + V)$_**.
 
 ### K-nearest neighbor(kNN)
 
-The user's input of starting point and destination might not fall in our nodes. To find a valid start and end point, we use kNN to find a nearest node by longtitude and latitude. We plan to use KD-Tree to implement this algorithm. The time complexity is **$O(log N)$** for querying such node.
+The user's input of starting point and destination might not fall in our nodes. To find a valid start and end point, we
+use kNN to find a nearest node by longtitude and latitude. We plan to use KD-Tree to implement this algorithm. The time
+complexity is **$O(log N)$** for querying such node.
 
 ## Timeline
 
