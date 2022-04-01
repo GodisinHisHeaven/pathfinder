@@ -50,6 +50,13 @@ public:
      */
     void BFS(string start_node);
 
+    /**
+     * @brief Dijkstra's Algorithm
+     * 
+     * @param start_node 
+     */
+    void Dijkstra(string start_node);
+
 private:
     int num_vertices;
     map<string, vector<string>> adj_list;
