@@ -35,12 +35,6 @@ gas consumption.
 The time complexity should be _**$O((E + V)logV)$**_ while the E edges and V are vertices in our graph. The space
 complexity should be **_$O(E + V)$_**.
 
-### K-nearest neighbor(kNN)
-
-The user's input of starting point and destination might not fall in our nodes. To find a valid start and end point, we
-use kNN to find a nearest node by longtitude and latitude. We plan to use KD-Tree to implement this algorithm. The time
-complexity is **$O(log N)$** for querying such node.
-
 ## Timeline
 
 ### Week 1 (March 27 - April 2)
