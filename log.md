@@ -15,7 +15,7 @@
 * BFS traversal
 
 #### kcm3:
-* kNN setup
+* 
 
 #### yihengn2:
 * Have a good rest
