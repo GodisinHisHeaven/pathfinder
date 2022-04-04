@@ -32,6 +32,7 @@
 ### Next Week's Plan:
 
 * Finish the BFS
+* Finish the Graph data structure and file I/O
 
 ## Week 2
 
