@@ -35,6 +35,13 @@ gas consumption.
 The time complexity should be _**$O((E + V)logV)$**_ while the E edges and V are vertices in our graph. The space
 complexity should be **_$O(E + V)$_**.
 
+### Project on to Map Based on Data
+
+By the given latitude, longitude and the shortest path we find, we could project this graph onto a map.
+
+The time complexity should be **_$O(E + V)$_** while we just iterate through the graph and project it. The space complexity
+should be **_$O(E + V)$_**, too.
+
 ## Timeline
 
 ### Week 1 (March 27 - April 2)
