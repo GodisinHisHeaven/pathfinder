@@ -19,7 +19,7 @@
 
 #### kcm3:
 
-*
+* ~~KNN implementation~~
 
 #### yihengn2:
 
