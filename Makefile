@@ -6,7 +6,7 @@ all: bin/exec
 exec: bin/exec
 tests: bin/tests
 
-bin/exec: ./src/Graph.cpp
+bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 #bin/tests: ./tests/tests.cc obj/catch.o ./src/color.cc ./src/elevation_dataset.cc ./src/grayscale_image.cc ./src/path_image.cc ./src/path.cc

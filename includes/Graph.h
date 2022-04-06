@@ -17,57 +17,55 @@
 #include <vector>
 #include <iostream>
 #include <map>
+#include "memory"
 
-using namespace std;
-
-class Graph
-{
+/**
+ * using adjacency list to store graph.
+ */
+class Graph {
 public:
-    /**
-     * @brief Construct a new Graph object
-     *
-     */
-    Graph();
+    Graph() = delete;
+    Graph(const Graph&) = delete;
 
     /**
-     * @brief Destroy the Graph object
-     *
+     * pre-allocate memories for graph
+     * @param numNodes
      */
-    ~Graph();
+    Graph(int numNodes){
+        entries.reserve(numNodes);
+        adjList.resize(numNodes);
+    }
+    ~Graph() = default;
 
     /**
-     * @brief Add a new edge to the graph
-     *
-     * @param start
-     * @param dest
+     * add a node to the graph
+     * @param X X-coordinate
+     * @param Y Y-coordinate
      */
-    void addEdge(string start, string dest);
+    void addNode(double X, double Y);
 
     /**
-     * @brief BFS Traversal
-     *
-     * @param start_node
+     * add an edge connecting two nodes.
+     * @param startID
+     * @param endID
+     * @param distance
      */
-    void BFS(string start_node);
-
-    /**
-     * @brief Dijkstra's Algorithm
-     *
-     * @param start_node
-     */
-    void Dijkstra(string start_node);
-
-    /**
-     * @brief K-nearest neighbor(kNN)
-     *
-     * @param start_node
-     * @param end_node
-     * returns nodes closest to start and end nodes
-     */
-    map<string, string> kNN(string start_node, string end_node);
+    void addEdge(int startID, int endID, double distance);
 
 private:
-    int num_vertices;
-    map<string, vector<string>> adj_list;
-    bool **visited;
+
+    struct Node {
+        // node id was represented by index in vector
+        double X;
+        double Y;
+        Node(double x, double y);
+    };
+
+    struct Adjacency {
+        int ID;
+        double dist;
+        Adjacency(int ID, double dist) : ID(ID), dist(dist){}
+    };
+    std::vector<Node> entries;
+    std::vector<std::vector<Adjacency>> adjList;
 };
