@@ -25,16 +25,18 @@
 class Graph {
 public:
     Graph() = delete;
-    Graph(const Graph&) = delete;
+
+    Graph(const Graph &) = delete;
 
     /**
      * pre-allocate memories for graph
      * @param numNodes
      */
-    Graph(int numNodes){
+    Graph(int numNodes) {
         entries.reserve(numNodes);
         adjList.resize(numNodes);
     }
+
     ~Graph() = default;
 
     /**
@@ -52,20 +54,31 @@ public:
      */
     void addEdge(int startID, int endID, double distance);
 
+    /**
+     * BFS Traversal
+     * @param startID
+     * @param endID
+     * @return
+     */
+    std::vector<int> BFS(int startID, int endID);
+
 private:
 
     struct Node {
         // node id was represented by index in vector
         double X;
         double Y;
+
         Node(double x, double y);
     };
 
     struct Adjacency {
         int ID;
         double dist;
-        Adjacency(int ID, double dist) : ID(ID), dist(dist){}
+
+        Adjacency(int ID, double dist) : ID(ID), dist(dist) {}
     };
+
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
 };

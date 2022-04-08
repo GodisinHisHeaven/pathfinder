@@ -14,7 +14,9 @@ each line. The dataset is about 10MB.
 
 We could check the data by check the coordinates are in the boundary of the United States or not.
 
-We would store this dataset by an array. The total storage costs should be **_O(N)_**.
+We would store this dataset by an array. The array will have Node ID, Normalized X Coordinate, Normalized Y Coordinate.
+
+The total storage costs should be **_O(N)_**.
 
 ## Graph Algorithms
 
@@ -39,7 +41,7 @@ complexity should be **_$O(E + V)$_**.
 
 By the given latitude, longitude and the shortest path we find, we could project this graph onto a map.
 
-We will project all of the routes first and then will project the shortest path by a different color.
+We will project all the routes first and then will project the shortest path by a different color.
 
 The time complexity should be **_$O(E + V)$_** while we just iterate through the graph and project it. The space
 complexity should be **_$O(E + V)$_**, too.
