@@ -14,7 +14,7 @@ each line. The dataset is about 10MB.
 
 We could check the data by check the coordinates are in the boundary of the United States or not.
 
-We would store this dataset by an array. The array will have Node ID, Normalized X Coordinate, Normalized Y Coordinate.
+We will store the nodes in a vector and the edges in an adjacency list.
 
 The total storage costs should be **_O(N)_**.
 
