@@ -20,3 +20,7 @@ std::vector<int> Graph::BFS(int startID, int endID) {
 
 
 }
+
+std::vector<int> Graph::Dijkstra(int startID, int endID) {
+
+}

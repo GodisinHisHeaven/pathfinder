@@ -62,6 +62,14 @@ public:
      */
     std::vector<int> BFS(int startID, int endID);
 
+    /**
+     * Dijkstra's Algorithm
+     * @param startID
+     * @param endID
+     * @return
+     */
+    std::vector<int> Dijkstra(int startID, int endID);
+
 private:
 
     struct Node {
