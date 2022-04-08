@@ -41,10 +41,10 @@ complexity should be **_$O(E + V)$_**.
 
 By the given latitude, longitude and the shortest path we find, we could project this graph onto a map.
 
-We will project all the routes first and then will project the shortest path by a different color.
+We will only use the shortest path to project the graph.
 
-The time complexity should be **_$O(E + V)$_** while we just iterate through the graph and project it. The space
-complexity should be **_$O(E + V)$_**, too.
+While we only project the shortest path, the time complexity would be **_$O(N)$_**, while N is the number of nodes in
+the shortest path. The space complexity should be **_$O(N)$_**, too.
 
 ## Timeline
 
