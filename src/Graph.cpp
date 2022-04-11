@@ -14,7 +14,7 @@ void Graph::addEdge(int startID, int endID, double distance) {
 }
 
 // Version 1, only calculate the distance between two nodes
-int Graph::BFS(int startID, int endID) {
+std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
     // TODO: return the shortest path from startID to endID not only the distance
     int steps = 0;
     vector<Node> visited;

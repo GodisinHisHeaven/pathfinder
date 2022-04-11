@@ -23,6 +23,8 @@
  * using adjacency list to store graph.
  */
 class Graph {
+private:
+    struct Node;
 public:
     Graph() = delete;
 
@@ -60,7 +62,7 @@ public:
      * @param endID
      * @return
      */
-    int BFS(int startID, int endID);
+    std::vector<Node> BFS(int startID, int endID);
 
     /**
      * Dijkstra's Algorithm
