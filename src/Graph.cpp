@@ -13,32 +13,31 @@ void Graph::addEdge(int startID, int endID, double distance) {
     adjList.at(startID).emplace_back(endID, distance);
 }
 
-std::vector<int> Graph::BFS(int startID, int endID) {
-    vector<int> path;
-    vector<Adjacency> visited;
-    queue<Adjacency> q;
+int Graph::BFS(int startID, int endID) {
+    int steps = 0;
+    vector<Node> visited;
+    queue<Node> q;
 
-    q.push(Adjacency(startID, 0));
-    visited.emplace_back(startID, 0);
+    q.push(entries.at(startID));
+    visited.push_back(entries.at(startID));
 
     while (!q.empty()) {
-        Adjacency curr = q.front();
+        Node current = q.front();
         q.pop();
 
-        if (curr.ID == endID) {
-            path.push_back(curr.ID);
-            return path;
+        if (current.X == entries.at(endID).X && current.Y == entries.at(endID).Y) {
+            return steps;
         }
 
-        for (auto &adj : adjList[curr.ID]) {
-            if (find(visited.begin(), visited.end(), adj) == visited.end()) {
-                visited.emplace_back(adj.ID, adj.dist + curr.dist);
-                q.push(Adjacency(adj.ID, adj.dist + curr.dist));
+        for (auto &edge: adjList.at(entries.at(startID).X)) {
+            if (find(visited.begin(), visited.end(), entries.at(edge.ID)) == visited.end()) {
+                q.push(entries.at(edge.ID));
+                visited.push_back(entries.at(edge.ID));
             }
         }
-
+        steps++;
     }
-    return path;
+    return -1;
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
