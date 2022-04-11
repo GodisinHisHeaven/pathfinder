@@ -85,7 +85,6 @@ private:
         double dist;
 
         Adjacency(int ID, double dist) : ID(ID), dist(dist) {}
-
     };
 
     std::vector<Node> entries;
