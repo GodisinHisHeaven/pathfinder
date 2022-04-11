@@ -62,15 +62,19 @@
 ### Encountered Problems:
 
 * Proposal editing
+* yihengn2 is hurt and needs to rest
 
 ### Next Week's Plan:
 
-* Debug
+* Debug together
 * Finish Dijkstra's algorithm
 
 ## Week 3
 
 ### Goals:
+
+* Finish Dijkstra's algorithm
+* Debug together
 
 ### Tasks:
 
