@@ -72,6 +72,15 @@ public:
      */
     std::vector<int> Dijkstra(int startID, int endID);
 
+    /**
+     * get the distance between two adjacent nodes
+     * @param startID
+     * @param endID
+     * @return
+     */
+    double getDistance(int startID, int endID);
+
+
 private:
 
     struct Node {
@@ -92,3 +101,5 @@ private:
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
 };
+
+
