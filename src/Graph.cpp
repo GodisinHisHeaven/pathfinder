@@ -50,7 +50,7 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 }
 
 //double Graph::getDistance(int startID, int endID) {
-//    //TODO: return the distance between two nodes
+//    // return the distance between two nodes
 //    // calculate the distance between two nodes by Haversine formula
 //
 //    double distance = 0;
