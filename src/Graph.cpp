@@ -39,7 +39,6 @@ std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
         }
 
 
-
     }
 
     return path;
@@ -50,22 +49,23 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 
 }
 
-double Graph::getDistance(int startID, int endID) {
-    //TODO: return the distance between two nodes
-    // calculate the distance between two nodes by Haversine formula
-
-    double distance = 0;
-
-    double lat1 = entries.at(startID).X;
-    double lon1 = entries.at(startID).Y;
-    double lat2 = entries.at(endID).X;
-    double lon2 = entries.at(endID).Y;
-
-    double dLat = (lat2 - lat1) * (M_PI / 180);
-    double dLon = (lon2 - lon1) * (M_PI / 180);
-    double a = sin(dLat / 2) * sin(dLat / 2) + cos(lat1 * (M_PI / 180)) * cos(lat2 * (M_PI / 180)) * sin(dLon / 2) * sin(dLon / 2);
-    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
-    distance = 6371 * c;
-
-    return distance;
-}
+//double Graph::getDistance(int startID, int endID) {
+//    //TODO: return the distance between two nodes
+//    // calculate the distance between two nodes by Haversine formula
+//
+//    double distance = 0;
+//
+//    double lat1 = entries.at(startID).X;
+//    double lon1 = entries.at(startID).Y;
+//    double lat2 = entries.at(endID).X;
+//    double lon2 = entries.at(endID).Y;
+//
+//    double dLat = (lat2 - lat1) * (M_PI / 180);
+//    double dLon = (lon2 - lon1) * (M_PI / 180);
+//    double a = sin(dLat / 2) * sin(dLat / 2) +
+//               cos(lat1 * (M_PI / 180)) * cos(lat2 * (M_PI / 180)) * sin(dLon / 2) * sin(dLon / 2);
+//    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+//    distance = 6371 * c;
+//
+//    return distance;
+//}

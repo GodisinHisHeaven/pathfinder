@@ -72,13 +72,15 @@ public:
      */
     std::vector<int> Dijkstra(int startID, int endID);
 
+
+    // No need to implement since we have the distance in edge file
     /**
      * get the distance between two adjacent nodes
      * @param startID
      * @param endID
      * @return
      */
-    double getDistance(int startID, int endID);
+//    double getDistance(int startID, int endID);
 
 
 private:
