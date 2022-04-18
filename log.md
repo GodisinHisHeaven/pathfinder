@@ -78,9 +78,20 @@
 
 ### Tasks:
 
+#### kcm3:
+
+* Dijkstra's algorithm
+
+#### mingjun6:
+
+* BFS traversal
+
 ### Encountered Problems:
+
+* Record the shortest path in the BFS traversal
 
 ### Next Week's Plan:
 
+* Finish the things for mid-project check in
 
 
