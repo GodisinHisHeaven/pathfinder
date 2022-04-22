@@ -1,0 +1,12 @@
+bin
+obj
+src
+*.o
+*.obj
+*.exe
+*.lib
+*.dll
+*.a
+*.so
+*.dylib
+

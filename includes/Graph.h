@@ -27,7 +27,7 @@ private:
     struct Node;
     struct Adjacency;
 public:
-    Graph() = delete;
+    Graph() = default;
 
     Graph(const Graph &) = delete;
 
