@@ -57,6 +57,22 @@ public:
     void addEdge(int startID, int endID, double distance);
 
     /**
+     * @brief Get the Node At given ID
+     * 
+     * @param ID
+     * @return Node 
+     */
+    Node getNodeAt(int ID);
+
+    /**
+     * @brief Return adjList
+     * 
+     * @param startID 
+     * @return std::vector<std::vector<Adjacency> >
+     */
+    std::vector<std::vector<Adjacency> > getAdjList();
+
+    /**
      * BFS Traversal
      * @param startID
      * @param endID

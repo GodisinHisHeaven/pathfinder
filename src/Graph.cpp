@@ -11,6 +11,14 @@ void Graph::addEdge(int startID, int endID, double distance) {
     adjList.at(startID).emplace_back(endID, distance);
 }
 
+Graph::Node Graph::getNodeAt(int ID) {
+    return entries.at(ID);
+}
+
+std::vector<std::vector<Graph::Adjacency> > Graph::getAdjList() {
+    return adjList;
+}
+
 // Version 1, only calculate the distance between two nodes
 std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
     // TODO: return the shortest path from startID to endID not only the distance
