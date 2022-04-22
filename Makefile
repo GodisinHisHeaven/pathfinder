@@ -15,7 +15,7 @@ bin/tests: ./tests/test_BFS.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cp
 obj/catch.o: ./catch/catchmain.cpp
 	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
-.DEFAULT_GOAL := clean
+.DEFAULT_GOAL := tests
 .PHONY: clean
 
 clean:
