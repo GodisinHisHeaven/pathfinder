@@ -3,8 +3,40 @@
 #include "../includes/GraphReader.h"
 #include <iostream>
 
+TEST_CASE("addNode works","[Basic Function]") {
+    Graph *graph = nullptr;
+
+    graph->addNode(0, 0);
+    graph->addNode(1, 1);
+    graph->addNode(2, 3);
+
+    REQUIRE((graph->getNodeAt(0).X == 0 && graph->getNodeAt(0).Y == 0));
+    REQUIRE((graph->getNodeAt(1).X == 1 && graph->getNodeAt(1).Y == 1));
+    REQUIRE((graph->getNodeAt(2).X == 2 && graph->getNodeAt(2).Y == 3));
+}
+
+TEST_CASE("GraphReader reads small dataset correctly", "[Data Parsing]") {
+    Graph *graph = nullptr;
+    std::string nodeFilePath = "dataset/test.cnode";
+    std::string edgeFilePath = "dataset/test.cedge";
+    GraphReader graphReader(graph, nodeFilePath, edgeFilePath);
+    graphReader.readNodes();
+    graphReader.readEdges();
+
+    REQUIRE((graph->getNodeAt(0).X == 0 && graph->getNodeAt(0).Y == 0));
+    REQUIRE((graph->getNodeAt(1).X == 1 && graph->getNodeAt(1).Y == 1));
+    REQUIRE((graph->getNodeAt(2).X == 2 && graph->getNodeAt(2).Y == 3));
+    REQUIRE((graph->getNodeAt(3).X == 4 && graph->getNodeAt(3).Y == 2));
+    REQUIRE((graph->getNodeAt(4).X == 5 && graph->getNodeAt(4).Y == 0));
+
+    REQUIRE(graph->getAdjList().at(0).size() == 2);
+    REQUIRE(graph->getAdjList().at(2).size() == 1);
+    REQUIRE(graph->getAdjList().at(3).size() == 1);
+}
+
+
 TEST_CASE("GraphReader reads nodes correctly", "[Data Parsing]") {
-    Graph *graph;
+    Graph *graph = nullptr;
     std::string nodeFilePath = "dataset/NA.cnode";
     std::string edgeFilePath = "dataset/NA.cedge";
     GraphReader graphReader(graph, nodeFilePath, edgeFilePath);
@@ -28,7 +60,7 @@ TEST_CASE("GraphReader reads nodes correctly", "[Data Parsing]") {
 }
 
 TEST_CASE("GraphReader reads edges correctly", "[Data Parsing]") {
-    Graph *graph;
+    Graph *graph = nullptr;
     std::string nodeFilePath = "dataset/NA.cnode";
     std::string edgeFilePath = "dataset/NA.cedge";
     GraphReader graphReader(graph, nodeFilePath, edgeFilePath);

@@ -6,17 +6,14 @@ all: bin/exec
 exec: bin/exec
 tests: bin/tests
 
-bin/tests: ./tests/test_BFS.cpp ./src/Graph.cpp ./src/GraphReader.cpp
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
 bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-#bin/tests: ./tests/tests.cc obj/catch.o ./src/color.cc ./src/elevation_dataset.cc ./src/grayscale_image.cc ./src/path_image.cc ./src/path.cc
-	#$(CXX) $(CXXFLAGS) $^ -o $@
+bin/tests: ./tests/test_BFS.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-#obj/catch.o: tests/catch.cc
-#	$(CXX) $(CXXFLAGS) -c $^ -o $@
+obj/catch.o: ./catch/catchmain.cpp
+	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 .DEFAULT_GOAL := clean
 .PHONY: clean
