@@ -5,6 +5,7 @@ Graph::Node::Node(double x, double y) : X(x), Y(y) {}
 
 void Graph::addNode(double X, double Y) {
     entries.emplace_back(X, Y); // push back and construct object
+    adjList.push_back({});
 }
 
 void Graph::addEdge(int startID, int endID, double distance) {
