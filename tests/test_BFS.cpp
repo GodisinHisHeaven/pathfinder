@@ -4,7 +4,7 @@
 #include <iostream>
 
 TEST_CASE("GraphReader reads nodes correctly", "[Data Parsing]") {
-    Graph *graph;
+    Graph* graph =nullptr;
     std::string nodeFilePath = "dataset/NA.cnode";
     std::string edgeFilePath = "dataset/NA.cedge";
     GraphReader graphReader(graph, nodeFilePath, edgeFilePath);
@@ -28,7 +28,7 @@ TEST_CASE("GraphReader reads nodes correctly", "[Data Parsing]") {
 }
 
 TEST_CASE("GraphReader reads edges correctly", "[Data Parsing]") {
-    Graph *graph;
+    Graph *graph = nullptr;
     std::string nodeFilePath = "dataset/NA.cnode";
     std::string edgeFilePath = "dataset/NA.cedge";
     GraphReader graphReader(graph, nodeFilePath, edgeFilePath);
