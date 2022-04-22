@@ -12,11 +12,11 @@ bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
 bin/tests: ./tests/test_BFS.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-obj/catch.o: ./catch/catchmain.cpp
+obj/catch.o: catch/catchmain.cpp
 	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 .DEFAULT_GOAL := tests
-.PHONY: clean
+.PHONY: clean tests exec
 
 clean:
 	rm -fr bin/* obj/*
