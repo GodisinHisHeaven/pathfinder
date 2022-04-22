@@ -6,6 +6,9 @@ all: bin/exec
 exec: bin/exec
 tests: bin/tests
 
+bin/tests: ./tests/test_BFS.cpp ./src/Graph.cpp ./src/GraphReader.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 

@@ -38,14 +38,6 @@ std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
             break;
         }
 
-        for (auto &neighbor: adjList.at(current.X)) {
-            if (std::find(visited.begin(), visited.end(), neighbor) == visited.end()) {
-                Node next = entries.at(neighbor.ID);
-                q.push(next);
-                visited.push_back(next);
-            }
-        }
-
 
     }
 
@@ -54,7 +46,10 @@ std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
-
+    std::vector<int> path;
+    path.push_back(startID);
+    path.push_back(endID);
+    return path;
 }
 
 //double Graph::getDistance(int startID, int endID) {

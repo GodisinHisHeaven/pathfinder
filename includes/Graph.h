@@ -25,6 +25,7 @@
 class Graph {
 private:
     struct Node;
+    struct Adjacency;
 public:
     Graph() = delete;
 
