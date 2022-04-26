@@ -94,4 +94,31 @@
 
 * Finish the things for mid-project check in
 
+## Week 4
+
+### Goals:
+
+* Prepare for mid-project check in
+
+### Tasks:
+
+#### xudongx2:
+
+* Write Makefile
+
+#### yihengn2:
+
+* Write testcases for data parsing
+
+### Encountered Problems:
+
+* Endless loop in testcases
+* Couldn't compile on mingjun6's machine because of arm64
+
+### Next Week's Plan:
+
+* Improve the BFS traversal
+* Finish the Dijkstra's algorithm
+* Start the implementation of graph projection
+
 
