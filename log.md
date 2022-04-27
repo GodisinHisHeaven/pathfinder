@@ -121,4 +121,18 @@
 * Finish the Dijkstra's algorithm
 * Start the implementation of graph projection
 
+## Week 5
+
+### Goals:
+
+* Improve the BFS traversal
+* Finish the Dijkstra's algorithm
+* Start the implementation of graph projection
+
+### Tasks:
+
+### Encountered Problems:
+
+### Next Week's Plan:
+
 
