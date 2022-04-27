@@ -9,7 +9,7 @@ tests: bin/tests
 bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-bin/tests: ./tests/test_BFS.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp
+bin/tests: ./tests/test_data_parsing.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 obj/catch.o: catch/catchmain.cpp
