@@ -79,7 +79,7 @@ public:
      * @param endID
      * @return
      */
-    std::vector<Node> BFS(int startID, int endID);
+    std::vector<int> BFS(int startID, int endID);
 
     /**
      * Dijkstra's Algorithm

@@ -21,25 +21,36 @@ std::vector<std::vector<Graph::Adjacency> > Graph::getAdjList() {
 }
 
 // Version 1, only calculate the steps between two nodes
-std::vector<Graph::Node> Graph::BFS(int startID, int endID) {
+std::vector<int> Graph::BFS(int startID, int endID) {
     // TODO: return the shortest path from startID to endID not only the distance
-    std::vector<Node> path;
-    std::vector<Node> visited;
-    std::queue<Node> q;
+    std::vector<int> path;
+    std::vector<bool> visited(entries.size(), false);
+    std::queue<int> q;
+    int minDistance = INT_MAX;
 
-    q.push(entries.at(startID));
-    visited.push_back(entries.at(startID));
+    q.push(startID);
+    visited[startID] = true;
 
     while (!q.empty()) {
-        Node current = q.front();
+        int curr = q.front();
         q.pop();
 
-        if (current.X == entries.at(endID).X && current.Y == entries.at(endID).Y) {
-            path.push_back(current);
+        if (curr == endID) {
+            path.push_back(curr);
             break;
         }
 
-
+        // for each neighbor find the shortest distance
+        for (auto &neighbor: adjList.at(curr)) {
+            if (!visited[neighbor.ID]) {
+                visited[neighbor.ID] = true;
+                q.push(neighbor.ID);
+                if (neighbor.dist < minDistance) {
+                    minDistance = neighbor.dist;
+                    path.push_back(neighbor.ID);
+                }
+            }
+        }
 
     }
 
