@@ -131,8 +131,23 @@
 
 ### Tasks:
 
+#### kcm3:
+
+* Dijkstra's algorithm
+
+#### mingjun6:
+
+* BFS traversal
+
+#### xudongx2 & yihengn2:
+
+* Test cases
+
 ### Encountered Problems:
 
 ### Next Week's Plan:
+
+* Finish the implementation of graph projection
+* Debug
 
 
