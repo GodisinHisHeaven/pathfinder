@@ -145,6 +145,8 @@
 
 ### Encountered Problems:
 
+* Makefile
+
 ### Next Week's Plan:
 
 * Finish the implementation of graph projection
