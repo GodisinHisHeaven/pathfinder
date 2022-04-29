@@ -23,7 +23,6 @@ std::vector<std::vector<Graph::Adjacency> > Graph::getAdjList() {
 
 // Version 1, only calculate the steps between two nodes
 std::vector<int> Graph::BFS(int startID, int endID) {
-    // TODO: return the shortest path from startID to endID not only the distance
     std::vector<int> path;
     std::vector<bool> visited(entries.size(), false);
     std::queue<int> q;
