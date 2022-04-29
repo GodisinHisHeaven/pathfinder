@@ -24,15 +24,16 @@ std::vector<int> Graph::BFS(int startID, int endID) {
     std::vector<int> path;
     std::vector<bool> visited(entries.size(), false);
     std::queue<int> q;
-    double minDistance = INT_MAX;
 
     q.push(startID);
     visited[startID] = true;
 
     while (!q.empty()) {
         int curr = q.front();
-        std::vector<Adjacency> temp;
         q.pop();
+
+        std::vector<Adjacency> temp;
+        double minDistance = INT_MAX;
 
         if (curr == endID) {
             path.push_back(curr);
