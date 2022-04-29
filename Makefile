@@ -2,6 +2,7 @@ CXX=clang++
 INCLUDES=-Iincludes/
 CXXFLAGS=-std=c++11 -g -fstandalone-debug -Wall -Wextra -Werror -pedantic $(INCLUDES)
 
+
 all: bin/exec
 exec: bin/exec
 tests: bin/tests
