@@ -20,8 +20,6 @@ std::vector<std::vector<Graph::Adjacency> > Graph::getAdjList() {
     return adjList;
 }
 
-
-// Version 1, only calculate the steps between two nodes
 std::vector<int> Graph::BFS(int startID, int endID) {
     std::vector<int> path;
     std::vector<bool> visited(entries.size(), false);
@@ -64,7 +62,6 @@ std::vector<int> Graph::BFS(int startID, int endID) {
     }
 
     return path;
-
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
