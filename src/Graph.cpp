@@ -50,15 +50,8 @@ std::vector<int> Graph::BFS(int startID, int endID) {
             }
         }
 
-        if (!temp.empty()) {
-            int closest = temp.at(0).ID;
-            for (auto &neighbor: temp) {
-                if (neighbor.dist < temp.at(closest).dist) {
-                    closest = neighbor.ID;
-                }
-            }
-            path.push_back(closest);
-        }
+        int closest = temp.at(-1).ID;
+        path.push_back(closest);
     }
 
     return path;
