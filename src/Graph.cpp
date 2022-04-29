@@ -38,7 +38,7 @@ std::vector<int> Graph::BFS(int startID, int endID) {
         q.pop();
 
         std::vector<Adjacency> temp;
-        int minDistance = INT_MAX;
+        double minDistance = INT_MAX;
 
         if (curr == endID) {
             path.push_back(curr);
