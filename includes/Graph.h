@@ -119,6 +119,7 @@ private:
 
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
+
 };
 
 

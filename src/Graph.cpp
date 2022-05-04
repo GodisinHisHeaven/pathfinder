@@ -5,24 +5,20 @@
 
 Graph::Node::Node(double x, double y) : X(x), Y(y) {}
 
-void Graph::addNode(double X, double Y)
-{
+void Graph::addNode(double X, double Y) {
     entries.emplace_back(X, Y); // push back and construct object
     adjList.push_back({});
 }
 
-void Graph::addEdge(int startID, int endID, double distance)
-{
+void Graph::addEdge(int startID, int endID, double distance) {
     adjList.at(startID).emplace_back(endID, distance);
 }
 
-Graph::Node Graph::getNodeAt(int ID)
-{
+Graph::Node Graph::getNodeAt(int ID) {
     return entries.at(ID);
 }
 
-std::vector<std::vector<Graph::Adjacency>> Graph::getAdjList()
-{
+std::vector<std::vector<Graph::Adjacency>> Graph::getAdjList() {
     return adjList;
 }
 
@@ -63,41 +59,61 @@ std::vector<int> Graph::BFS(int startID, int endID) {
     return path;
 }
 
-std::vector<int> Graph::Dijkstra(int startID, int endID)
-{
-    std::priority_queue<int> q;
+std::vector<int> Graph::Dijkstra(int startID, int endID) {
+    //TODO: implement Dijkstra's algorithm with the time complexity we mentioned in the proposal!
+    std::priority_queue<std::pair<int, double>> pq;
 
     std::vector<int> path;
     std::vector<bool> visited(entries.size(), false);
-    q.push(startID);
+    pq.push(std::make_pair(startID, adjList.at(startID).at(0).dist));
     visited[startID] = true;
 
-    while (!q.empty()) {
-        int curr = q.top();
-        q.pop();
-
-        std::vector<Adjacency> temp;
-        double minDistance = INT_MAX;
+    while (!pq.empty()) {
+        int curr = pq.top().first;
+        pq.pop();
 
         if (curr == endID) {
             path.push_back(curr);
             break;
         }
 
+        //use priority queue to find the closest node
         for (auto &neighbor: adjList.at(curr)) {
             if (!visited[neighbor.ID]) {
                 visited[neighbor.ID] = true;
-                q.push(neighbor.ID);
-                if (neighbor.dist < minDistance) {
-                    minDistance = neighbor.dist;
-                    temp.push_back(neighbor);
-                }
+                pq.push(std::make_pair(neighbor.ID, neighbor.dist));
+                //find the closest node
+
             }
         }
-
-        int closest = temp.at(-1).ID;
-        path.push_back(closest);
     }
+
+//    while (!pq.empty()) {
+//        int curr = pq.front();
+//        pq.pop();
+//
+//        std::vector<Adjacency> temp;
+//        double minDistance = INT_MAX;
+//
+//        if (curr == endID) {
+//            path.push_back(curr);
+//            break;
+//        }
+//
+//        for (auto &neighbor: adjList.at(curr)) {
+//            if (!visited[neighbor.ID]) {
+//                visited[neighbor.ID] = true;
+//                pq.push(neighbor.ID);
+//                if (neighbor.dist < minDistance) {
+//                    minDistance = neighbor.dist;
+//                    temp.push_back(neighbor);
+//                }
+//            }
+//        }
+//
+//        int closest = temp.at(-1).ID;
+//        path.push_back(closest);
+//    }
 
     return path;
 }
