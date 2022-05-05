@@ -19,5 +19,4 @@ TEST_CASE("BFS works on small dataset", "[BFS]") {
     REQUIRE(path[1] == 2);
     REQUIRE(path[2] == 3);
     REQUIRE(path[3] == 4);
-
 }
