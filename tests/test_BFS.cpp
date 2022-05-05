@@ -4,18 +4,20 @@
 #include <iostream>
 
 TEST_CASE("BFS works on small dataset", "[BFS]") {
-   Graph graph;
+    Graph graph;
     std::string nodeFilePath = "tests/test.cnode";
     std::string edgeFilePath = "tests/test.cedge";
     GraphReader graphReader(&graph, nodeFilePath, edgeFilePath);
     graphReader.readNodes();
     graphReader.readEdges();
 
-   std::vector<int> path = graph.BFS(0, 4); // throws exception
+    std::vector<int> path;
 
-    REQUIRE(path.size() == 3);
+    path = graph.BFS(0,4);
+
+    REQUIRE(path.size() == 5);
     REQUIRE(path[1] == 2);
     REQUIRE(path[2] == 3);
     REQUIRE(path[3] == 4);
-   
+
 }
