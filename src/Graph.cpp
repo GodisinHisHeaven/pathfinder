@@ -33,9 +33,6 @@ std::vector<int> Graph::BFS(int startID, int endID) {
         int curr = q.front();
         q.pop();
 
-        std::vector<Adjacency> temp;
-        double minDistance = INT_MAX;
-
         if (curr == endID) {
             path.push_back(curr);
             break;
@@ -45,15 +42,10 @@ std::vector<int> Graph::BFS(int startID, int endID) {
             if (!visited[neighbor.ID]) {
                 visited[neighbor.ID] = true;
                 q.push(neighbor.ID);
-                if (neighbor.dist < minDistance) {
-                    minDistance = neighbor.dist;
-                    temp.push_back(neighbor);
-                }
             }
         }
 
-        int closest = temp.at(-1).ID;
-        path.push_back(closest);
+        path.push_back(q.front());
     }
 
     return path;
