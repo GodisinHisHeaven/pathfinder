@@ -7,10 +7,10 @@ all: bin/exec
 exec: bin/exec
 tests: bin/tests
 
-bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp
+bin/exec: ./src/Graph.cpp ./src/GraphReader.cpp ./src/Visualize.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-bin/tests: ./tests/test_BFS.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp
+bin/tests: ./tests/test_data_parsing.cpp obj/catch.o ./src/Graph.cpp ./src/GraphReader.cpp ./src/Visualize.cpp ./tests/test_visualization.cpp ./cs225/PNG.cpp ./cs225/HSLAPixel.cpp ./cs225/lodepng/lodepng.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 obj/catch.o: catch/catchmain.cpp

@@ -18,6 +18,7 @@
 #include <iostream>
 #include <map>
 #include "memory"
+#include "../cs225/PNG.h"
 
 /**
  * using adjacency list to store graph.
@@ -120,6 +121,8 @@ private:
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
 
+    cs225::PNG *draw(cs225::PNG *png, const std::vector<int> &nodeID ,std::pair<double,double> topLeft,
+                     std::pair<double,double> rightDown);
 };
 
 

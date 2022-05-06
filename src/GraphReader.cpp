@@ -4,6 +4,7 @@
 
 #include "../includes/GraphReader.h"
 
+
 GraphReader::GraphReader(Graph *graph, const std::string &nodeFilePath, const std::string &edgeFilePath) : graph(graph),
                                                                                                            nodeFilePath(
                                                                                                                    nodeFilePath),
