@@ -13,7 +13,7 @@
 
     占个位置
 
-#### Our final report is named "result.md"
+#### Our final report is named "results.md"
 
 #### The dataset is in the directory "dataset", the dataset is from the following link:
 
