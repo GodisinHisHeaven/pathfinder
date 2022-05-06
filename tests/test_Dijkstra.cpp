@@ -3,6 +3,16 @@
 #include "../includes/GraphReader.h"
 #include <iostream>
 
+/**
+ *        2 — — 4      7
+ *      /     / |  \   |
+ *    1         |   6  |
+ *      \   /   |  /   |
+ *    0   3 — — 5      8
+ * 
+ * a brief graph of Dijkstra.cnode and Dijkstra.cedge
+**/
+
 TEST_CASE("Dijkstra works on simple route", "[line]") {
     Graph graph;
     std::string nodeFilePath = "tests/Dijkstra.cnode";
