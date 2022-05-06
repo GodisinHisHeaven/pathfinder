@@ -152,4 +152,36 @@
 * Finish the implementation of graph projection
 * Debug
 
+## Week 6
+
+### Goals:
+
+* Finish the implementation of graph projection
+* Debug
+
+### Tasks:
+
+#### kcm3:
+
+* Dijkstra's algorithm
+
+#### xudongx2 & mingjun6:
+
+* Graph projection
+
+#### yihengn2:
+
+* Test cases
+
+### Encountered Problems:
+
+* Base map creation
+* Makefile
+* Time complexity of Dijkstra's algorithm is too high
+* Mirrored graph projection
+
+### Next Week's Plan:
+
+* Happy semester end!
+
 
