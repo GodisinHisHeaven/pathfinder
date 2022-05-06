@@ -15,7 +15,9 @@
 
 #### Our final report is named "result.md"
 
-#### The dataset is in the directory "dataset"
+#### The dataset is in the directory "dataset", the dataset is from the following link:
+
+    https://www.cs.utah.edu/~lifeifei/SpatialDataset.htm
 
 ### In order to test the program, you need to run the following command on the EWS:
 
