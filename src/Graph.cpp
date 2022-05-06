@@ -1,6 +1,6 @@
 #include "Graph.h"
 #include <cmath>
-#include <limits.h>
+#include <limits>
 
 
 Graph::Node::Node(double x, double y) : X(x), Y(y) {}
@@ -53,15 +53,15 @@ std::vector<int> Graph::BFS(int startID, int endID) {
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
     //TODO: implement Dijkstra's algorithm with the time complexity we mentioned in the proposal!
-    std::priority_queue<std::pair<int, double>> pq;
+    std::priority_queue<std::pair<double, int>> pq;
 
-    std::vector<int> path;
-    std::vector<bool> visited(entries.size(), false);
-    pq.push(std::make_pair(startID, adjList.at(startID).at(0).dist));
-    visited[startID] = true;
+    std::vector<int> path(entries.size(), std::numeric_limits<int>::max());
+    pq.push(std::make_pair(adjList.at(startID).at(0).dist, startID));
+
+    path.at(startID) = 0;
 
     while (!pq.empty()) {
-        int curr = pq.top().first;
+        int curr = pq.top().second;
         pq.pop();
 
         if (curr == endID) {
@@ -71,41 +71,13 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 
         //use priority queue to find the closest node
         for (auto &neighbor: adjList.at(curr)) {
-            if (!visited[neighbor.ID]) {
-                visited[neighbor.ID] = true;
-                pq.push(std::make_pair(neighbor.ID, neighbor.dist));
-                //find the closest node
-
+            if (path[neighbor.ID] > path[curr] + neighbor.dist)
+            {
+                path[neighbor.ID] = path[curr] + neighbor.dist;
+                pq.push(std::make_pair(neighbor.dist, neighbor.ID));
             }
         }
     }
-
-//    while (!pq.empty()) {
-//        int curr = pq.front();
-//        pq.pop();
-//
-//        std::vector<Adjacency> temp;
-//        double minDistance = INT_MAX;
-//
-//        if (curr == endID) {
-//            path.push_back(curr);
-//            break;
-//        }
-//
-//        for (auto &neighbor: adjList.at(curr)) {
-//            if (!visited[neighbor.ID]) {
-//                visited[neighbor.ID] = true;
-//                pq.push(neighbor.ID);
-//                if (neighbor.dist < minDistance) {
-//                    minDistance = neighbor.dist;
-//                    temp.push_back(neighbor);
-//                }
-//            }
-//        }
-//
-//        int closest = temp.at(-1).ID;
-//        path.push_back(closest);
-//    }
 
     return path;
 }
