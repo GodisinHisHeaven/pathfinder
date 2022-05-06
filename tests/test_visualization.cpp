@@ -67,7 +67,10 @@ TEST_CASE("Path Visualization", "[path]") {
     GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
     gr.readNodes();
     std::vector<int> v;
-    v = graph->BFS(1, 500);
+//    v = graph->Dijkstra(500, 114514);
+    for (size_t i = 1145; i < 114514; ++i) {
+        v.push_back(i);
+    }
     graph->drawPath(png, v);
     png->writeToFile("dataset/path.png");
 }
