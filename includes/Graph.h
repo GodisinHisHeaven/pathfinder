@@ -121,8 +121,8 @@ private:
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
 
-    cs225::PNG *draw(cs225::PNG *png, const std::vector<int> &nodeID ,std::pair<double,double> topLeft,
-                     std::pair<double,double> rightDown);
+    cs225::PNG *drawBaseMap(cs225::PNG *png);
+    cs225::PNG *drawPath(cs225::PNG *png, const std::vector<int> &nodeID);
 };
 
 

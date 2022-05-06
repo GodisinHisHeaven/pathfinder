@@ -1,7 +1,7 @@
 ## Leading Question
 
 As the gas price increased so much, we want to find a way to save money for our road trip. In this final project, we
-will analyze the gas consumption point to point by finding the shortest distance.
+will analyze point to point to finding the shortest distance.
 
 ## Dataset Acquisition and Processing
 
