@@ -52,13 +52,12 @@ std::vector<int> Graph::BFS(int startID, int endID) {
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
-    //TODO: implement Dijkstra's algorithm with the time complexity we mentioned in the proposal!
     std::priority_queue<std::pair<double, int>> pq;
-
-    std::vector<int> path(entries.size(), std::numeric_limits<int>::max());
+    std::vector<int> path;
+    std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
     pq.push(std::make_pair(adjList.at(startID).at(0).dist, startID));
 
-    path.at(startID) = 0;
+    dist.at(startID) = 0;
 
     while (!pq.empty()) {
         int curr = pq.top().second;
@@ -71,12 +70,13 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 
         //use priority queue to find the closest node
         for (auto &neighbor: adjList.at(curr)) {
-            if (path[neighbor.ID] > path[curr] + neighbor.dist)
+            if (dist[neighbor.ID] > dist[curr] + neighbor.dist)
             {
-                path[neighbor.ID] = path[curr] + neighbor.dist;
+                dist[neighbor.ID] = dist[curr] + neighbor.dist;
                 pq.push(std::make_pair(neighbor.dist, neighbor.ID));
             }
         }
+        path.push_back(pq.top().second);
     }
 
     return path;
