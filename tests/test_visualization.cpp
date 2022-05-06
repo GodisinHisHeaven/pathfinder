@@ -67,7 +67,7 @@ TEST_CASE("Path Visualization", "[path]") {
     GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
     gr.readNodes();
     std::vector<int> v;
-    v = graph->BFS(1, 500);
+    v = graph->BFS(500, 114514);
     graph->drawPath(png, v);
     png->writeToFile("dataset/path.png");
 }
