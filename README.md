@@ -7,4 +7,4 @@
     mkdir bin
     module load llvm/6.0.1
     make
-
+    bin/tests
