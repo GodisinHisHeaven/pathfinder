@@ -21,12 +21,11 @@ TEST_CASE("BFS works on simple route", "[line]") {
     graphReader.readNodes();
     graphReader.readEdges();
 
-    std::vector<int> path = graph.BFS(7,8);
+    std::vector<int> path = graph.BFS(7, 8);
 
     REQUIRE(path.size() == 2);
     REQUIRE(path[0] == 8);
     REQUIRE(path[1] == 8);
-
 
 }
 
@@ -38,7 +37,7 @@ TEST_CASE("BFS works on cyclic route 1", "[cycle]") {
     graphReader.readNodes();
     graphReader.readEdges();
 
-    std::vector<int> path = graph.BFS(1,5);
+    std::vector<int> path = graph.BFS(1, 5);
 
     REQUIRE(path.size() == 5);
     REQUIRE(path[0] == 2);
@@ -57,7 +56,7 @@ TEST_CASE("BFS works on cyclic route 2", "[cycle]") {
     graphReader.readNodes();
     graphReader.readEdges();
 
-    std::vector<int> path = graph.BFS(2,6);
+    std::vector<int> path = graph.BFS(2, 6);
 
     REQUIRE(path.size() == 4);
     REQUIRE(path[0] == 4);
@@ -75,7 +74,7 @@ TEST_CASE("BFS works on cyclic route 3", "[cycle]") {
     graphReader.readNodes();
     graphReader.readEdges();
 
-    std::vector<int> path = graph.BFS(1,6);
+    std::vector<int> path = graph.BFS(1, 6);
 
     REQUIRE(path.size() == 6);
     REQUIRE(path[0] == 2);
@@ -95,7 +94,7 @@ TEST_CASE("BFS works on dsiconnected route ", "[disconnected]") {
     graphReader.readNodes();
     graphReader.readEdges();
 
-    std::vector<int> path = graph.BFS(1,7);
+    std::vector<int> path = graph.BFS(1, 7);
 
     REQUIRE(path.size() == 6);
     REQUIRE(path[0] == 2);

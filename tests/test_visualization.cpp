@@ -45,17 +45,29 @@
 
 
 TEST_CASE("Visualization", "[vis]") {
-    cs225::PNG* png = new cs225::PNG(1000,1000);
-    Graph* graph = new Graph();
-    GraphReader gr(graph,"dataset/NA.cnode", "dataset/NA.cedge");
+    cs225::PNG *png = new cs225::PNG(1000, 1000);
+    Graph *graph = new Graph();
+    GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
     gr.readNodes();
     for (size_t i = 0; i < 175812; ++i) {
         auto node = graph->getNodeAt(i);
         auto x = node.X;
         auto y = node.Y;
-        png->getPixel((x/10),1000-(y/10)) = cs225::HSLAPixel(0,1,0.5);
+        png->getPixel((x / 10), 1000 - (y / 10)) = cs225::HSLAPixel(0, 1, 0);
     }
     png->writeToFile("dataset/base.png");
     delete png;
     delete graph;
+}
+
+TEST_CASE("Path Visualization", "[path]") {
+    cs225::PNG *png = new cs225::PNG(1000, 1000);
+    png->readFromFile("dataset/base.png");
+    Graph *graph = new Graph();
+    GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
+    gr.readNodes();
+    std::vector<int> v;
+    v = graph->BFS(1, 500);
+    graph->drawPath(png, v);
+    png->writeToFile("dataset/path.png");
 }
