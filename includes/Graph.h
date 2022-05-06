@@ -28,6 +28,10 @@ private:
     struct Node;
     struct Adjacency;
 public:
+    cs225::PNG *drawBaseMap(cs225::PNG *png);
+
+    cs225::PNG *drawPath(cs225::PNG *png, const std::vector<int> &nodeID);
+
     Graph() = default;
 
     Graph(const Graph &) = delete;
@@ -121,8 +125,7 @@ private:
     std::vector<Node> entries;
     std::vector<std::vector<Adjacency>> adjList;
 
-    cs225::PNG *drawBaseMap(cs225::PNG *png);
-    cs225::PNG *drawPath(cs225::PNG *png, const std::vector<int> &nodeID);
+
 };
 
 

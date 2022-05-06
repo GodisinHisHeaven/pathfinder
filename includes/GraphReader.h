@@ -1,9 +1,7 @@
 //
 // Created by Xudong Xiao on 2022-04-06.
 //
-
-#ifndef FINAL_GRAPHREADER_H
-#define FINAL_GRAPHREADER_H
+#pragma once
 #include "Graph.h"
 #include "fstream"
 /**
@@ -20,6 +18,3 @@ private:
     std::string nodeFilePath;
     std::string edgeFilePath;
 };
-
-
-#endif //FINAL_GRAPHREADER_H
