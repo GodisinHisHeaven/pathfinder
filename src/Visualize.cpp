@@ -17,7 +17,7 @@ cs225::PNG * Graph::drawBaseMap(cs225::PNG *png) {
         auto node = this->getNodeAt(i);
         auto x = node.X;
         auto y = node.Y;
-        png->getPixel((x/10),1000-(y/10)) = cs225::HSLAPixel(0,1,1);
+        png->getPixel((x/10),1000-(y/10)) = cs225::HSLAPixel(0,1,0);
     }
     png->writeToFile("dataset/base.png");
     return png;
