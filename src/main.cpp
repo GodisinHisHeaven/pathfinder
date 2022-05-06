@@ -22,13 +22,15 @@ int main(int argc, char *argv[]) {
 
     auto *png = new cs225::PNG(1000, 1000);
     png = graph->drawBaseMap(png);
+    png->writeToFile("base.png");
+
     std::vector<int> path;
     int start = arg0; // start node, change it as you like
     int end = arg1; // end node, change it as you like, max node id is 175812!
     path = graph->Dijkstra(start, end);
 
-    graph->drawPath(png, path);
-    std::cout<<"PNG saved to output/result.png\n";
-    png->writeToFile("output/result.png");
+    png = graph->drawPath(png, path);
+    std::cout<<"PNG saved to result.png\n";
+    png->writeToFile("result.png");
     return 0;
 }
