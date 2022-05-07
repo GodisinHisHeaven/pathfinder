@@ -54,7 +54,7 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
     std::priority_queue<std::pair<double, int>> pq;
     std::vector<int> path;
     std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
-    pq.push(std::make_pair(adjList.at(startID).at(0).dist, startID));
+    pq.push(std::make_pair(0, startID));
     std::vector<bool> visited(entries.size(), false);
 
     dist.at(startID) = 0;
