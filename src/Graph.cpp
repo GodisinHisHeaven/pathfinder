@@ -51,7 +51,14 @@ std::vector<int> Graph::BFS(int startID, int endID) {
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
-    std::priority_queue<std::pair<double, int>> pq;
+    class Comparator{
+    public:
+        bool operator()(std::pair<double,int> a,std::pair<double,int> b) const{
+            return a.first < b.first;
+        }
+    };
+
+    std::priority_queue<std::pair<double, int>, std::vector<std::pair<double, int>>, Comparator> pq;
     std::vector<int> path;
     std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
     pq.push(std::make_pair(0, startID));
