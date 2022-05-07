@@ -3,7 +3,7 @@
 <span style="color: grey;">The answer to your leading question – You should direct address your proposed leading question. How did you answer this question? What did you discover? If your project was ultimately unsuccessful, give a brief reflection about what worked and what you would do differently as a team. </span>
 
 # Introduction
-Throughout the course, we have seen several algorithms and structures for organizing and manipulating data，and with the current circumstance where gas prices in the U.S. hit a fresh new high, we decide to build a project which is able to draw the shortest path between a starting point and a destination on road network of North America
+Throughout the course, we have seen several algorithms and structures for organizing and manipulating data, and with the current circumstance where gas prices in the U.S. hit a fresh new high, we decide to build a project which is able to draw the shortest path between a starting point and a destination on road network of North America
 
 # Data Parsing
 # BFS Algorithm
@@ -11,10 +11,13 @@ In our final program, we implement Breadth-first search (BFS) algorithm for find
  
  ![BFS test graph](tests/BFS_test_graph.png)
 
-However, this algorithm cannot solve our leading questions, as BFS take the distance between each node as equal while in practice road length varies.
+However, this algorithm cannot solve our leading question, as BFS take the distance between each node as equal while in practice road length varies.
 
 # Dijkstra's Algorithm
+To make up the deficiency of BFS algorithm on finding the shortest path and answer our leading question, we implement Dijkstra's algorithm. Instead of queue, we choose to use priority queue this time in order to spare the time visiting  numerous unrelated nodes. we test this algorithm on the same dataset as was used in BFS algorithm testing. 
+
 # Graph Visualization
+
 # Summary
 
 
