@@ -13,7 +13,7 @@
 
     https://drive.google.com/file/d/1XeGXMGXNedAAQnR7ROKbP-xxs_4qVZ-l/view?usp=sharing
 
-#### Our final report is named "results.md"
+#### Our final report is named "result.md"
 
 #### The dataset is in the directory "dataset", the dataset is from the following link:
 
