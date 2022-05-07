@@ -32,5 +32,5 @@
     make exec
     bin/exec [start node] [end node]
 
-#### After the program run successfully, you can see the output in the directory "output".
+#### After the program run successfully, you can see the output named "result.png"
 
