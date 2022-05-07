@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include <limits>
+#include "unordered_map"
 
 
 Graph::Node::Node(double x, double y) : X(x), Y(y) {}
@@ -51,31 +52,48 @@ std::vector<int> Graph::BFS(int startID, int endID) {
 }
 
 std::vector<int> Graph::Dijkstra(int startID, int endID) {
-    std::priority_queue<std::pair<double, int>> pq;
+    class Comparator{
+    public:
+        bool operator()(std::pair<double,int> a,std::pair<double,int> b) const{
+            return a.first < b.first;
+        }
+    };
+
+    std::priority_queue<std::pair<double, int>, std::vector<std::pair<double, int>>, Comparator> pq;
     std::vector<int> path;
     std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
-    pq.push(std::make_pair(adjList.at(startID).at(0).dist, startID));
+    pq.push(std::make_pair(0, startID));
+    std::vector<int> visited(entries.size(), false);
 
     dist.at(startID) = 0;
+
+    std::map<int, int> prev; // map a node to its predecessor
 
     while (!pq.empty()) {
         int curr = pq.top().second;
         pq.pop();
 
         if (curr == endID) {
-            path.push_back(curr);
+//            path.push_back(curr);
             break;
         }
 
-        //use priority queue to find the closest node
         for (auto &neighbor: adjList.at(curr)) {
-            if (dist[neighbor.ID] > dist[curr] + neighbor.dist)
-            {
-                dist[neighbor.ID] = dist[curr] + neighbor.dist;
-                pq.push(std::make_pair(neighbor.dist, neighbor.ID));
+            if (!visited[neighbor.ID] && dist.at(neighbor.ID) > dist.at(curr) + neighbor.dist) {
+                dist.at(neighbor.ID) = dist.at(curr) + neighbor.dist;
+                pq.push(std::make_pair(dist.at(neighbor.ID), neighbor.ID));
+                prev[neighbor.ID] = curr;
             }
         }
-        path.push_back(pq.top().second);
+        visited[curr] = 1;
+
+    }
+
+//    auto curr = endID;
+//    auto currprev = prev[curr];
+
+    for ( auto curr = endID; curr != startID; curr = prev[curr]) {
+        path.push_back(curr);
     }
 
     return path;
