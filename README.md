@@ -29,7 +29,8 @@
 
 ### For customized output, you can run the following command on the EWS:
 
-    占个位置
+    make exec
+    bin/exec [start node] [end node]
 
 #### After the program run successfully, you can see the output in the directory "output".
 
