@@ -23,7 +23,7 @@ TEST_CASE("Dijkstra works on simple route", "[line]") {
 
     std::vector<int> path = graph.Dijkstra(7, 8);
 
-    REQUIRE(path.size() == 2);
+    REQUIRE(path.size() == 1);
     REQUIRE(path[0] == 8);
     REQUIRE(path[1] == 8);
 

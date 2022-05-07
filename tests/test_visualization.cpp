@@ -60,17 +60,17 @@ TEST_CASE("Visualization", "[vis]") {
     delete graph;
 }
 
-TEST_CASE("Path Visualization", "[path]") {
-    cs225::PNG *png = new cs225::PNG(1000, 1000);
-    png->readFromFile("dataset/base.png");
-    Graph *graph = new Graph();
-    GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
-    gr.readNodes();
-    std::vector<int> v;
-    v = graph->Dijkstra(500, 114514);
-//    for (size_t i = 1145; i < 114514; ++i) {
-//        v.push_back(i);
-//    }
-    graph->drawPath(png, v);
-    png->writeToFile("dataset/path.png");
-}
+//TEST_CASE("Path Visualization", "[path]") {
+//    cs225::PNG *png = new cs225::PNG(1000, 1000);
+//    png->readFromFile("dataset/base.png");
+//    Graph *graph = new Graph();
+//    GraphReader gr(graph, "dataset/NA.cnode", "dataset/NA.cedge");
+//    gr.readNodes();
+//    std::vector<int> v;
+//    v = graph->Dijkstra(14, 45);
+////    for (size_t i = 1145; i < 114514; ++i) {
+////        v.push_back(i);
+////    }
+//    graph->drawPath(png, v);
+//    png->writeToFile("dataset/path.png");
+//}

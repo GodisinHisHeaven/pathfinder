@@ -59,28 +59,28 @@ TEST_CASE("GraphReader reads nodes correctly", "[Data Parsing]") {
     REQUIRE(statement == true);
 }
 
-TEST_CASE("GraphReader reads edges correctly", "[Data Parsing]") {
-   Graph graph;
-   std::string nodeFilePath = "dataset/NA.cnode";
-   std::string edgeFilePath = "dataset/NA.cedge";
-   GraphReader graphReader(&graph, nodeFilePath, edgeFilePath);
-   graphReader.readNodes();
-   graphReader.readEdges();
-
-   std::ifstream edgesFile(edgeFilePath);
-   int ID;
-   int start, end;
-   double dist;
-   bool statement = true;
-   while (edgesFile >> ID >> start >> end >> dist) {
-
-    if (graph.getAdjList().at(start).at(end).ID == end && graph.getAdjList().at(start).at(end).dist != dist) {
-           statement = false;
-           std::cout << "wrong data at " << ID << std::endl;
-           break;
-    }
-
-   }
-
-   REQUIRE(statement == true);
-}
+//TEST_CASE("GraphReader reads edges correctly", "[Data Parsing]") {
+//   Graph graph;
+//   std::string nodeFilePath = "dataset/NA.cnode";
+//   std::string edgeFilePath = "dataset/NA.cedge";
+//   GraphReader graphReader(&graph, nodeFilePath, edgeFilePath);
+//   graphReader.readNodes();
+//   graphReader.readEdges();
+//
+//   std::ifstream edgesFile(edgeFilePath);
+//   int ID;
+//   int start, end;
+//   double dist;
+//   bool statement = true;
+//   while (edgesFile >> ID >> start >> end >> dist) {
+//
+//    if (graph.getAdjList().at(start).at(end).ID == end && graph.getAdjList().at(start).at(end).dist != dist) {
+//           statement = false;
+//           std::cout << "wrong data at " << ID << std::endl;
+//           break;
+//    }
+//
+//   }
+//
+//   REQUIRE(statement == true);
+//}
