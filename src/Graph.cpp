@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include <limits>
+#include "unordered_map"
 
 
 Graph::Node::Node(double x, double y) : X(x), Y(y) {}
@@ -62,28 +63,37 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
     std::vector<int> path;
     std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
     pq.push(std::make_pair(0, startID));
-    std::vector<bool> visited(entries.size(), false);
+    std::vector<int> visited(entries.size(), false);
 
     dist.at(startID) = 0;
+
+    std::map<int, int> prev; // map a node to its predecessor
 
     while (!pq.empty()) {
         int curr = pq.top().second;
         pq.pop();
 
         if (curr == endID) {
-            path.push_back(curr);
+//            path.push_back(curr);
             break;
         }
 
         for (auto &neighbor: adjList.at(curr)) {
             if (!visited[neighbor.ID] && dist.at(neighbor.ID) > dist.at(curr) + neighbor.dist) {
-                visited[neighbor.ID] = true;
                 dist.at(neighbor.ID) = dist.at(curr) + neighbor.dist;
                 pq.push(std::make_pair(dist.at(neighbor.ID), neighbor.ID));
+                prev[neighbor.ID] = curr;
             }
         }
+        visited[curr] = 1;
 
-        path.push_back(pq.top().second);
+    }
+
+//    auto curr = endID;
+//    auto currprev = prev[curr];
+
+    for ( auto curr = endID; curr != startID; curr = prev[curr]) {
+        path.push_back(curr);
     }
 
     return path;
