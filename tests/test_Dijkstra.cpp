@@ -13,8 +13,9 @@ TEST_CASE("Dijkstra works on simple route", "[line]") {
 
     std::vector<int> path = graph.Dijkstra(7, 8);
 
-    REQUIRE(path.size() == 1);
+    REQUIRE(path.size() == 2);
     REQUIRE(path[0] == 8);
+    REQUIRE(path[1] == 7);
 
 }
 
@@ -28,9 +29,10 @@ TEST_CASE("Dijkstra works on cyclic route 1", "[cycle]") {
 
     std::vector<int> path = graph.Dijkstra(1, 5);
 
-    REQUIRE(path.size() == 2);
+    REQUIRE(path.size() == 3);
     REQUIRE(path[0] == 5);
     REQUIRE(path[1] == 2);
+    REQUIRE(path[2] == 1);
 
 }
 
@@ -44,9 +46,10 @@ TEST_CASE("Dijkstra works on cyclic route 2", "[cycle]") {
 
     std::vector<int> path = graph.Dijkstra(2, 6);
 
-    REQUIRE(path.size() == 2);
+    REQUIRE(path.size() == 3);
     REQUIRE(path[0] == 6);
     REQUIRE(path[1] == 5);
+    REQUIRE(path[2] == 2);
 
 }
 
@@ -60,10 +63,11 @@ TEST_CASE("Dijkstra works on cyclic route 3", "[cycle]") {
 
     std::vector<int> path = graph.Dijkstra(1, 6);
 
-    REQUIRE(path.size() == 3);
+    REQUIRE(path.size() == 4);
     REQUIRE(path[0] == 6);
     REQUIRE(path[1] == 5);
     REQUIRE(path[2] == 2);
+    REQUIRE(path[3] == 1);
 
 }
 
