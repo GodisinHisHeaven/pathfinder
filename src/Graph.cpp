@@ -55,6 +55,7 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
     std::vector<int> path;
     std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
     pq.push(std::make_pair(adjList.at(startID).at(0).dist, startID));
+    std::vector<bool> visited(entries.size(), false);
 
     dist.at(startID) = 0;
 
@@ -67,14 +68,14 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
             break;
         }
 
-        //use priority queue to find the closest node
         for (auto &neighbor: adjList.at(curr)) {
-            if (dist[neighbor.ID] > dist[curr] + neighbor.dist)
-            {
-                dist[neighbor.ID] = dist[curr] + neighbor.dist;
-                pq.push(std::make_pair(neighbor.dist, neighbor.ID));
+            if (!visited[neighbor.ID] && dist.at(neighbor.ID) > dist.at(curr) + neighbor.dist) {
+                visited[neighbor.ID] = true;
+                dist.at(neighbor.ID) = dist.at(curr) + neighbor.dist;
+                pq.push(std::make_pair(dist.at(neighbor.ID), neighbor.ID));
             }
         }
+
         path.push_back(pq.top().second);
     }
 
