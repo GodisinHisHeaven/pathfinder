@@ -94,13 +94,13 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 
 //    auto curr = endID;
 //    auto currprev = prev[curr];
-    if (prev.find(endID) ==prev.end())
+    if (prev.find(endID) == prev.end())
         return {};
     path.reserve(abs(startID - endID));
     for ( auto curr = endID; curr != startID; curr = prev[curr]) {
         path.push_back(curr);
     }
-
+    path.push_back(startID);
     return path;
 }
 
