@@ -25,6 +25,11 @@ int main(int argc, char *argv[]) {
     png->writeToFile("base.png");
 
     std::vector<int> path;
+    if (path.empty()){
+        std::cout<< "No path available for given start and end point\n";
+        return -1;
+    }
+
     int start = arg0; // start node, change it as you like
     int end = arg1; // end node, change it as you like, max node id is 175812!
     path = graph->Dijkstra(start, end);

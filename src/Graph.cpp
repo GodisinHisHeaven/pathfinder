@@ -61,13 +61,15 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
 
     std::priority_queue<std::pair<double, int>, std::vector<std::pair<double, int>>, Comparator> pq;
     std::vector<int> path;
-    std::vector<int> dist(entries.size(), std::numeric_limits<int>::max());
+    std::vector<double> dist(entries.size(), std::numeric_limits<int>::max());
     pq.push(std::make_pair(0, startID));
     std::vector<int> visited(entries.size(), false);
 
     dist.at(startID) = 0;
 
     std::map<int, int> prev; // map a node to its predecessor
+
+    prev[startID] = startID;
 
     while (!pq.empty()) {
         int curr = pq.top().second;
@@ -87,11 +89,14 @@ std::vector<int> Graph::Dijkstra(int startID, int endID) {
         }
         visited[curr] = 1;
 
+
     }
 
 //    auto curr = endID;
 //    auto currprev = prev[curr];
-
+    if (prev.find(endID) ==prev.end())
+        return {};
+    path.reserve(abs(startID - endID));
     for ( auto curr = endID; curr != startID; curr = prev[curr]) {
         path.push_back(curr);
     }
